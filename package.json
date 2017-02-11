@@ -8,7 +8,7 @@
     "prod": "NODE_ENV=production pm2 start production/server.js",
     "dev": "webpack-dev-server --env development"
   },
-  "repository": "https://github.com/rrdev-las/TNI.git",
+  "repository": "https://github.com/luchoster/b64.git",
   "author": "LESS",
   "license": "MIT",
   "dependencies": {
