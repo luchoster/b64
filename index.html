@@ -2,13 +2,24 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
     <title> Base64 Translator </title>
+    <meta name="theme-color" content="#254e72">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <link rel="shortcut icon" type="image/png" href="/public/img/logo.png"/>
     <link rel="stylesheet" href="/public/bundle.css">
+    <link rel="manifest" href="/public/manifest.json">
   </head>
 
   <body>
-    <div id='app'></div>
+    <div id='app'>
+      Javascript needs to be enable, so you can see this beautiful app!!!
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+           navigator.serviceWorker
+            .register('service-worker.js')
+        }
+    </script>
     <script src="/public/vendor1.js"></script>
     <script src="/public/vendor0.js"></script>
     <script src="/public/app.js"></script>

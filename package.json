@@ -4,7 +4,7 @@
   "description": "you know!",
   "main": "./app/app.js",
   "scripts": {
-    "build": "yarn && babel app -d production --ignore dist/* --copy-files && webpack -p",
+    "build": "yarn && babel app -d production --ignore dist/* --copy-files && webpack -p && sw-precache --config=sw-precache-config.js",
     "prod": "NODE_ENV=production pm2 start production/server.js",
     "dev": "webpack-dev-server --env development"
   },
@@ -31,7 +31,8 @@
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "smoothscroll-polyfill": "^0.3.4"
+    "smoothscroll-polyfill": "^0.3.4",
+    "sw-precache": "^4.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
