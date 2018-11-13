@@ -20,7 +20,7 @@ module.exports = {
         background: '#172a3a',
         theme_color: '#004346',
         display: 'standalone',
-        orientation: 'any',
+        orientation: 'portrait',
         start_url: '/?homescreen=1',
         version: '1.0',
 
