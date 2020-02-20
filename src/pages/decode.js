@@ -48,55 +48,46 @@ class Decode extends React.Component {
     return (
       <Layout>
         <div className="container">
-          <div className="row">
-            <CardHeader title="Decode Page" />
-          </div>
           <Divider />
-          <GridList>
-            <GridListTile cols={2} className="col mt-30">
-              <TextField
-                className="mt-30"
-                label="Text you want to Decode"
+          <section className="showcase">
+            <section className="nes-container with-title">
+              <p className="title">Decode</p>
+              <textarea
+                className="nes-textarea mt-30"
+                placeholder="Text you want to Decode"
                 multiline
                 rowsMax={7}
                 value={this.state.stringToDecode}
                 onChange={this.handleTranslation}
                 fullWidth
               />
-              <TextField
-                className="mt-30"
+              <textarea
+                className="nes-textarea mt-30"
                 disabled
-                label="Decoded Text"
+                placeholder="Decoded Text"
                 multiline
                 rowsMax={7}
                 value={this.state.decodedString}
                 fullWidth
               />
-            </GridListTile>
-            <GridListTile className="col">
-              <Button
-                className="col-md-6 mt-30"
-                raised
-                color="primary"
-                variant="contained"
-                onClick={this.decodeString}
-                disabled={R.isNil(this.state.stringToDecode) ? true : false}
-              >
-                Decode
-              </Button>
-            </GridListTile>
-            <GridListTile className="col">
-              <Button
-                variant="contained"
-                className="col-md-6 mt-30"
-                raised
-                color="secondary"
-                onClick={this.clearInputs}
-              >
-                Reset
-              </Button>
-            </GridListTile>
-          </GridList>
+              <div className="buttons-container item mt-30">
+                <button
+                  className={`col-md-6 nes-btn primary ${
+                    R.isNil(this.state.stringToDecode) ? 'is-disabled' : ''
+                  }`}
+                  onClick={this.decodeString}
+                >
+                  Decode
+                </button>
+                <button
+                  className="col-md-6 nes-btn is-error"
+                  onClick={this.clearInputs}
+                >
+                  Reset
+                </button>
+              </div>
+            </section>
+          </section>
         </div>
       </Layout>
     )

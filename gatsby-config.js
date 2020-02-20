@@ -61,17 +61,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
-    {
-      resolve: `@wapps/gatsby-plugin-material-ui`,
-      options: {
-        // Add any options here
-        theme: {
-          palette: {
-            type: 'dark',
-          },
-          primaryColor: '#508991',
-        },
-      },
-    },
   ],
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
   CardHeader,
   GridList,
@@ -8,50 +8,38 @@ import {
 } from '@material-ui/core'
 import Layout from '../components/layout'
 
-class Encode extends Component {
-  state = {
-    encodedString: '',
+export default () => {
+  const [encodedString, encodeString] = React.useState('')
+  const handleEncode = event => {
+    encodeString(window.btoa(unescape(encodeURIComponent(event.target.value))))
   }
-  handleEncode = event => {
-    this.setState({
-      encodedString: window.btoa(
-        unescape(encodeURIComponent(event.target.value))
-      ),
-    })
-  }
-  render() {
-    return (
-      <Layout>
-        <div className="container">
-          <div className="row">
-            <CardHeader title="Encode Page" />
-          </div>
-          <Divider />
-          <GridList>
-            <GridListTile cols={2} className="col mt-30">
-              <TextField
-                className="mt-30"
-                multiline
-                label="Text you want to Encode"
-                onChange={this.handleEncode}
-                fullWidth={true}
-                rowsMax={8}
-              />
-              <TextField
-                className="mt-30"
-                disabled={true}
-                multiline
-                fullWidth
-                rowsMax={8}
-                label="Encoded Text"
-                value={this.state.encodedString}
-              />
-            </GridListTile>
-          </GridList>
-        </div>
-      </Layout>
-    )
-  }
+  return (
+    <Layout>
+      <div className="container">
+        <Divider />
+        <section className="showcase">
+          <section className="nes-container with-title">
+            <p className="title">Encode</p>
+            <textarea
+              className="nes-textarea mt-30"
+              multiline
+              placeholder="Text you want to Encode"
+              onChange={handleEncode}
+              fullWidth={true}
+              rowsMax={8}
+            />
+            <textarea
+              className="nes-textarea mt-30"
+              disabled={true}
+              multiline
+              fullWidth
+              rowsMax={8}
+              placeholder="Encoded Text"
+              value={encodedString}
+            />
+          </section>
+        </section>
+      </div>
+    </Layout>
+  )
 }
-
-export default Encode
