@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  CardHeader,
-  GridList,
-  GridListTile,
-  Divider,
-  TextField,
-} from '@material-ui/core'
+import { Divider } from '@material-ui/core'
 import Layout from '../components/layout'
 
 export default () => {
